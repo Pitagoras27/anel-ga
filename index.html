@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono" rel="stylesheet">
+  <title>AANELK</title>
+  
+  <style>
+    body, html {
+  background-image: url(PIA17563_large.jpg);
+  margin: 0;
+  height: 100%;
+  text-align: center;
+  font-family: 'Oxygen Mono', monospace;
+  color: white;
+  background-size: cover;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  font-size: 30pt;
+  margin-bottom: 15px;
+}
+
+p {
+  text-align: left;
+  margin: 0;
+  text-transform: lowercase;
+  font-size: 10pt;
+  font-weight: 900;
+  width: 50%;
+  display: none;
+  line-height: 22px;
+}
+
+#table {
+	display: table;
+	width: 100%;
+  background-color: #transparent;
+}
+
+#centeralign {
+	display: table-cell;
+	vertical-align: middle;
+}
+  </style>
+</head>
+<body>
+  <div id="large-header"  style="height: 723px;">
+    <div id="table">
+      <div id="centeralign">
+        <h1>Hola Anel hermosa! ❤</h1>
+        <p>Algunas veces dañamos a quienes queremos en un acto inconciente que vence los logros obtenidos. No justificaré nada, podría sonar a escusa y ahora ya no es el tiempo. Pero te puedo desear de todo corazón, sigas siendo la persona que conocí, aquella que intenta ser fuerte ante su propia fragilidad, aquella que no busca dañar deliberadamente a nadie, y sólo ejerce su derecho a lo que la enseñanza de la vida le deja. Que el universo en su fuerza infinita te bendiga y te haga permancer con aquellas personas que siempre te protegeran y te quite los obstaculos mentales y materiales que no te dajan vivir como mereces. ❤</p>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    function typeEffect(element, speed) {
+      var text = element.innerHTML;
+      element.innerHTML = "";
+
+      var i = 0;
+      var timer = setInterval(function() {
+        if (i < text.length) {
+          element.append(text.charAt(i));
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, speed);
+    }
+
+
+    // application
+    var speed = 75;
+    var h1 = document.querySelector('h1');
+    var p = document.querySelector('p');
+    var delay = h1.innerHTML.length * speed + speed;
+
+    // type affect to header
+    typeEffect(h1, speed);
+
+
+    // type affect to body
+    setTimeout(function(){
+      p.style.display = "inline-block";
+      typeEffect(p, speed);
+    }, delay);
+
+  </script>
+  <script src="./TweenLite.min.js"></script>
+  <script src="./EasePack.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
